@@ -1,0 +1,50 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 11 juin 2023, 02:28:26
+    Author     : YABOIGUI
+*/
+.login_form_button,
+.register_button,
+.have_account,
+.create_new_account
+{
+    -fx-background-color:#26246E;
+    -fx-border-radius: 5px;
+}
+.password_forgot:hover{
+    -fx-opacity: .5;
+}
+
+.have_account,
+.create_new_account
+{
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.have_account:hover,
+.create_new_account:hover
+{
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+.login_form_button:hover,
+.have_account:hover,
+.create_new_account:hover,
+.register_button:hover
+{
+   -fx-background-color: transparent;
+   -fx-border-width: 2px;
+   -fx-border-color: #26246E;
+}
+
+.navigation {
+    -fx-font-size:20px;
+    -fx-background-color:aliceblue; 
+}
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="g5projetjavafx.jnlp">
+    <information>
+        <title>g5projetjavafx</title>
+        <vendor>kallo</vendor>
+        <description>null</description>
+        <offline-allowed/>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="9+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="g5projetjavafx.jar" size="7143936" download="eager"/>
+        <jar href="lib\commons-dbcp2-2.9.0.jar" size="211301" download="eager"/>
+        <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager"/>
+        <jar href="lib\commons-pool2-2.10.0.jar" size="141192" download="eager"/>
+        <jar href="lib\projetJavaGv.jar" size="57726" download="eager"/>
+        <jar href="lib\protobuf-java-3.21.9.jar" size="1671409" download="eager"/>
+        <jar href="lib\sqlite-jdbc-3.42.0.0.jar" size="13030515" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="800" height="600" main-class="g5projetjavafx.G5projetjavafx" name="G5projetjavafx"/>
+</jnlp>
+

@@ -1,0 +1,56 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+/*Traitement de mise en forme*/
+.navigation_section {
+    padding-right: 3px;
+}
+.nav_item {
+    -fx-text-fill : black;
+    -fx-cursor:hand;
+}
+.nav_item :hover {
+    -fx-opacity:.6;
+    
+}
+
+.rectangle_form {
+    -fx-border-color:  #245757;
+    -fx-border-width: 2.5px;
+}
+/* End navigation*/
+.info_client {
+    -fx-border-color:  #245757;
+    -fx-border-width: 2px;
+}
+
+.button_style {
+    -fx-background-color: #245757;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+}
+.button_style:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-border-color: #245757;
+    -fx-border-width: 2px;
+    -fx-cursor: hand;
+}
+
+.dashboard_panne_header,
+.dashboard_panne_content{
+    -fx-border-radius:7px;
+    -fx-border-width: 2px;
+    -fx-border-color: #245757;
+}
+
+.listeView {
+    -fx-text-fill: black;
+    -fx-font-size:30px;
+    -fx-font: 'bold';
+}

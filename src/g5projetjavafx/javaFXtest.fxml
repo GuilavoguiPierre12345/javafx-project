@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g5projetjavafx.JavaFXtestController">
+   <children>
+      <BorderPane fx:id="dashboard" prefHeight="800.0" prefWidth="1400.0">
+         <left>
+            <Pane fx:id="navigation_section" prefHeight="628.0" prefWidth="231.0" style="-fx-background-color: #245757;" styleClass="navigation_section" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="161.0" fitWidth="226.0" layoutX="35.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="57.0" layoutY="174.0" styleClass="nav_item" text="WELCOME">
+                     <font>
+                        <Font name="Century Gothic Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adminName" layoutX="75.0" layoutY="203.0" styleClass="nav_item" text="ADMIN" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="Century Gothic Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#1fff2b" layoutX="42.0" layoutY="125.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Line endX="116.0" layoutX="115.0" layoutY="245.0" startX="-115.0" stroke="WHITE" strokeWidth="5.0" />
+                  <Button fx:id="home" layoutX="7.0" layoutY="255.0" mnemonicParsing="false" onAction="#switchToPageHome" prefHeight="56.0" prefWidth="220.0" styleClass="nav_item" text="Accueil">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="logout" layoutX="6.0" layoutY="584.0" mnemonicParsing="false" onAction="#deconnexion" prefHeight="56.0" prefWidth="220.0" styleClass="nav_item" text="       Deconnexion">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="15.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/home.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="47.0" layoutX="13.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logout.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="user_manager" layoutX="6.0" layoutY="451.0" mnemonicParsing="false" onAction="#switchToPageGestionUsers" prefHeight="56.0" prefWidth="220.0" styleClass="nav_item" text="   Gestion Users">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="48.0" fitWidth="47.0" layoutX="10.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add-user.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="shop" layoutX="7.0" layoutY="321.0" mnemonicParsing="false" onAction="#switchToPageVente" prefHeight="56.0" prefWidth="220.0" styleClass="nav_item" text="Vente">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="51.0" fitWidth="52.0" layoutX="6.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/shopping-bag.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="provide" layoutX="7.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToPageApprovisionnement" prefHeight="56.0" prefWidth="220.0" styleClass="nav_item" text="Appro..">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="12.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="settings" layoutX="6.0" layoutY="518.0" mnemonicParsing="false" onAction="#switchToPageGestionnaire" prefHeight="56.0" prefWidth="220.0" styleClass="nav_item" text="   Paramètres">
+                     <font>
+                        <Font name="Century Gothic" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="48.0" fitWidth="47.0" layoutX="10.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/gear-interface-symbol-for-configuration.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </left>
+         <center>
+            <StackPane prefHeight="36.0" prefWidth="710.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="page_gestion_users" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Pane layoutX="24.0" layoutY="21.0" prefHeight="305.0" prefWidth="1132.0" styleClass="rectangle_form">
+                           <children>
+                              <TextField fx:id="nomUtilisateurt" layoutX="13.0" layoutY="115.0" prefHeight="51.0" prefWidth="527.0" promptText="Nom utilisateur">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="399.0" layoutY="24.0" prefHeight="50.0" prefWidth="406.0" text="NOUVEAU UTILISATEUR" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="93.0" fitWidth="127.0" layoutX="299.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/provider.png" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="18.0" layoutY="246.0" mnemonicParsing="false" onAction="#addUtilisateur" prefHeight="47.0" prefWidth="262.0" styleClass="button_style" text="ENREGISTRER">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="303.0" layoutY="246.0" mnemonicParsing="false" onAction="#updateUtilisateur" prefHeight="47.0" prefWidth="238.0" styleClass="button_style" text="MODIFIER">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="emailUtilisateurt" layoutX="558.0" layoutY="114.0" prefHeight="51.0" prefWidth="519.0" promptText="Email utilisateur">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                              <Button layoutX="560.0" layoutY="245.0" mnemonicParsing="false" onAction="#clearUtilisateur" prefHeight="47.0" prefWidth="257.0" styleClass="button_style" text="ANNULER">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox fx:id="roleUtilisateurt" layoutX="558.0" layoutY="178.0" prefHeight="49.0" prefWidth="520.0" promptText="Selectionner un role" style="-fx-background-color: white;" />
+                              <PasswordField fx:id="motDePasseUtilisateurt" layoutX="17.0" layoutY="174.0" prefHeight="57.0" prefWidth="521.0" promptText="Mot de passe utilisateur">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </Pane>
+                        <TableView fx:id="tableListeUtilisateur" layoutX="44.0" layoutY="381.0" onMouseClicked="#chargertableListeUtilisateur" prefHeight="357.0" prefWidth="1065.0">
+                           <columns>
+                              <TableColumn fx:id="colIdUser" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="colNomUtilisateur" prefWidth="310.0" text="Nom utilisateur" />
+                              <TableColumn fx:id="colEmailUtilisateur" prefWidth="363.6666259765625" text="Email utilisateur" />
+                              <TableColumn fx:id="colRoleUtilisateur" minWidth="0.0" prefWidth="167.3333740234375" text="Role" />
+                              <TableColumn prefWidth="150.3333740234375" text="Supprimer" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="426.0" layoutY="328.0" prefHeight="50.0" prefWidth="275.0" text="LISTE UTILISATEURS" textFill="#245757">
+                           <font>
+                              <Font name="System Bold Italic" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="page_approvisionnement" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Pane layoutX="7.0" layoutY="8.0" prefHeight="283.0" prefWidth="570.0" styleClass="rectangle_form">
+                           <children>
+                              <TextField fx:id="materiel_designation" layoutX="13.0" layoutY="63.0" prefHeight="51.0" prefWidth="548.0" promptText="Désignation matériel">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="materiel_description" layoutX="13.0" layoutY="117.0" prefHeight="51.0" prefWidth="548.0" promptText="Description matériel">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="materiel_stock" layoutX="12.0" layoutY="173.0" prefHeight="51.0" prefWidth="548.0" promptText="Stock (Quantite)">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="materiel_prix_unitaire" layoutX="13.0" layoutY="227.0" prefHeight="51.0" prefWidth="548.0" promptText="Prix Unitaire">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="588.0" layoutY="6.0" prefHeight="285.0" prefWidth="546.0" styleClass="rectangle_form">
+                           <children>
+                              <TextField fx:id="fournisseur_nom" layoutX="9.0" layoutY="68.0" prefHeight="51.0" prefWidth="532.0" promptText="Nom du fournisseur complet">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="fournisseur_adresse" layoutX="9.0" layoutY="123.0" prefHeight="51.0" prefWidth="532.0" promptText="Adresse fournisseur">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="fournisseur_materiel" layoutX="12.0" layoutY="178.0" prefHeight="51.0" prefWidth="528.0" promptText="Matériel fournit">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="134.0" layoutY="14.0" prefHeight="50.0" prefWidth="350.0" text="INFOS FOURNISSEUR" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="49.0" fitWidth="52.0" layoutX="58.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/provider.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="btn_ajout_materiel_fournisseur" layoutX="13.0" layoutY="233.0" mnemonicParsing="false" onAction="#addProvidersAndMaterials" prefHeight="47.0" prefWidth="262.0" styleClass="button_style" text="ENREGISTRER">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="281.0" layoutY="233.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="47.0" prefWidth="257.0" styleClass="button_style" text="NETTOYER">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="materiel_idMateriel" layoutX="-97.0" layoutY="39.0" prefHeight="51.0" prefWidth="548.0" promptText="Désignation matériel" visible="false">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="materiel_idFournisseurs" layoutX="-75.0" layoutY="82.0" prefHeight="51.0" prefWidth="548.0" promptText="Désignation matériel" visible="false">
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="fournisseur_idFournisseur" layoutX="21.0" layoutY="74.0" prefHeight="51.0" prefWidth="548.0" promptText="Nom du fournisseur complet" visible="false">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="8.0" layoutY="301.0" prefHeight="377.0" prefWidth="562.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="158.0" layoutY="1.0" prefHeight="50.0" prefWidth="282.0" text="Liste matériels" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="table_liste_materiel" layoutX="3.0" layoutY="61.0" onMouseClicked="#supprimerMateriel" prefHeight="313.0" prefWidth="554.0">
+                                 <columns>
+                                    <TableColumn fx:id="colId" prefWidth="51.0" text="Id" />
+                                    <TableColumn fx:id="colDesignation" prefWidth="179.0" text="Désignation" />
+                                    <TableColumn fx:id="colStock" prefWidth="63.0" text="Stock" />
+                                    <TableColumn fx:id="colPrixUnitaire" prefWidth="127.0" text="Prix Unitaire" />
+                                    <TableColumn fx:id="colIdFournisseur" prefWidth="148.0" text="Fournisseur" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="576.0" layoutY="298.0" prefHeight="379.0" prefWidth="555.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="181.0" layoutY="4.0" prefHeight="50.0" prefWidth="282.0" text="Liste fournisseurs" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tableListeFournisseur" layoutX="6.0" layoutY="60.0" onMouseClicked="#supprimerFournisseur" prefHeight="317.0" prefWidth="545.0">
+                                 <columns>
+                                    <TableColumn fx:id="idFournisseur1" prefWidth="51.0" text="Id" />
+                                    <TableColumn fx:id="nomComplet" prefWidth="210.0" text="Nom complet" />
+                                    <TableColumn fx:id="Adresse" prefWidth="142.0" text="Adresse" />
+                                    <TableColumn fx:id="MaterielFourni" prefWidth="142.666748046875" text="Matériel" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                        <TextField fx:id="rechercherMateriel" layoutX="14.0" layoutY="686.0" onKeyTyped="#filtrerEtRechercher" prefHeight="51.0" prefWidth="416.0" promptText="Rechercher un matériel...">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="rechercherFournisseur" layoutX="582.0" layoutY="684.0" onKeyTyped="#filtrerEtRechercherFournisseur" prefHeight="51.0" prefWidth="397.0" promptText="Rechercher un fournisseur...">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnModifMateriel" layoutX="447.0" layoutY="687.0" mnemonicParsing="false" onAction="#updateMateriel" prefHeight="50.0" prefWidth="113.0" styleClass="button_style" text="UPDATE" />
+                        <Button fx:id="btnModifFourniseur" layoutX="996.0" layoutY="685.0" mnemonicParsing="false" onAction="#updateFournisseur" prefHeight="50.0" prefWidth="128.0" styleClass="button_style" text="UPDATE" />
+                        <Label layoutX="194.0" layoutY="19.0" prefHeight="50.0" prefWidth="282.0" text="INFOS MATERIEL" textFill="#245757">
+                           <font>
+                              <Font name="System Bold Italic" size="34.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="57.0" fitWidth="71.0" layoutX="123.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/materiel.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="page_vente" prefHeight="200.0" prefWidth="200.0" styleClass="shop_page" visible="false">
+                     <children>
+                        <Pane layoutX="12.0" layoutY="10.0" prefHeight="303.0" prefWidth="489.0" styleClass="rectangle_form">
+                           <children>
+                              <TextField fx:id="clientNom" layoutX="7.0" layoutY="64.0" prefHeight="51.0" prefWidth="470.0" promptText="Nom du client" style="-fx-border-radius: 5px;" styleClass="info_client">
+                                 <font>
+                                    <Font name="Century Gothic" size="25.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="clientTel" layoutX="7.0" layoutY="124.0" prefHeight="51.0" prefWidth="470.0" promptText="Téléphone client" style="-fx-border-radius: 5px;" styleClass="info_client">
+                                 <font>
+                                    <Font name="Century Gothic" size="25.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="clientAd" layoutX="8.0" layoutY="186.0" prefHeight="51.0" prefWidth="470.0" promptText="Adresse client" style="-fx-border-radius: 5px;" styleClass="info_client">
+                                 <font>
+                                    <Font name="Century Gothic" size="25.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="clientGenre" layoutX="7.0" layoutY="244.0" prefHeight="51.0" prefWidth="470.0" promptText="Genre" style="-fx-border-radius: 5px;" styleClass="info_client">
+                                 <font>
+                                    <Font name="Century Gothic" size="25.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="130.0" layoutY="9.0" prefHeight="43.0" prefWidth="236.0" text="INFOS CLIENT" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="48.0" fitWidth="44.0" layoutX="66.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/customer.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="496.0" layoutY="5.0" prefHeight="733.0" prefWidth="638.0">
+                           <children>
+                              <Label layoutX="154.0" layoutY="8.0" prefHeight="50.0" prefWidth="377.0" text="LISTE DES MATERIELS" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="57.0" fitWidth="71.0" layoutX="81.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/materiel.png" />
+                                 </image>
+                              </ImageView>
+                              <TableView fx:id="tableListCommandeMateriel" layoutX="18.0" layoutY="144.0" prefHeight="506.0" prefWidth="615.0">
+                                 <columns>
+                                    <TableColumn fx:id="colDesignation1" prefWidth="309.0" style="-fx-font-size: 20px;" text="Designation" />
+                                    <TableColumn fx:id="quantite" prefWidth="149.0" style="-fx-font-size: 20px;" text="Qte" />
+                                    <TableColumn fx:id="colPrixU" prefWidth="156.0" sortType="DESCENDING" style="-fx-font-size: 20px;" text="Prix Unitaire" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="rechercheMateriels" layoutX="18.0" layoutY="75.0" onKeyTyped="#filtrerEtRechercherMaterielCommande" prefHeight="60.0" prefWidth="617.0" promptText="Rechercher un materiel...">
+                                 <font>
+                                    <Font name="Century Gothic" size="27.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="quantiteChoisi" layoutX="17.0" layoutY="670.0" prefHeight="61.0" prefWidth="390.0" promptText="Quanite de la commande">
+                                 <font>
+                                    <Font name="Century Gothic" size="25.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnAjoutPanier" layoutX="415.0" layoutY="673.0" mnemonicParsing="false" onAction="#addToPanier" prefHeight="57.0" prefWidth="219.0" styleClass="button_style" text="Ajouter au panier">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="323.0" prefHeight="343.0" prefWidth="489.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="155.0" layoutY="-4.0" prefHeight="50.0" prefWidth="143.0" text="PANIER" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="86.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/cart.png" />
+                                 </image>
+                              </ImageView>
+                              <ListView fx:id="contenuPanier" layoutX="2.0" layoutY="59.0" prefHeight="277.0" prefWidth="485.0" style="-fx-fixed-cell-size: 50px;" styleClass="listeView" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="13.0" layoutY="668.0" prefHeight="73.0" prefWidth="489.0" styleClass="rectangle_form">
+                           <children>
+                              <Button fx:id="valide_commande" layoutX="10.0" layoutY="7.0" mnemonicParsing="false" onAction="#addCommande" prefHeight="57.0" prefWidth="229.0" styleClass="button_style" text="Valider">
+                                 <font>
+                                    <Font name="Century Gothic" size="27.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="252.0" layoutY="6.0" mnemonicParsing="false" onAction="#clearFieldsclient" prefHeight="57.0" prefWidth="227.0" styleClass="button_style" text="Nettoyer  client">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="page_home" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Pane layoutX="11.0" layoutY="15.0" prefHeight="227.0" prefWidth="1123.0" styleClass="dashboard_panne_header">
+                           <children>
+                              <Pane layoutX="8.0" layoutY="20.0" prefHeight="186.0" prefWidth="245.0" style="-fx-background-color: #245757;" styleClass="header_panne">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="-2.0" prefHeight="41.0" prefWidth="215.0" text="VENTE TOTALE" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="4.0" layoutY="142.0" prefHeight="41.0" prefWidth="82.0" text="GNF" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="venteTotale" layoutX="7.0" layoutY="52.0" prefHeight="41.0" prefWidth="228.0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="79.0" fitWidth="92.0" layoutX="157.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/money.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="278.0" layoutY="22.0" prefHeight="185.0" prefWidth="256.0" style="-fx-background-color: #245757;" styleClass="header_panne">
+                                 <children>
+                                    <Label layoutX="68.0" layoutY="1.0" prefHeight="41.0" prefWidth="123.0" text="CLIENTS" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="81.0" fitWidth="88.0" layoutX="166.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/provider.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="nbrClient" layoutX="8.0" layoutY="69.0" prefHeight="105.0" prefWidth="123.0" style="-fx-font-size: 30px; -fx-alignment: center;" styleClass="widget" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="559.0" layoutY="21.0" prefHeight="184.0" prefWidth="262.0" style="-fx-background-color: #245757;" styleClass="header_panne">
+                                 <children>
+                                    <Label layoutX="25.0" prefHeight="41.0" prefWidth="227.0" text="FOURNISSEURS" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="83.0" fitWidth="85.0" layoutX="166.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/customer.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="nbrFournisseur" layoutX="4.0" layoutY="68.0" prefHeight="107.0" prefWidth="145.0" style="-fx-font-size: 30px; -fx-alignment: center;" styleClass="widget" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="839.0" layoutY="20.0" prefHeight="179.0" prefWidth="271.0" style="-fx-background-color: #245757;" styleClass="header_panne">
+                                 <children>
+                                    <Label layoutX="28.0" layoutY="5.0" prefHeight="41.0" prefWidth="233.0" text="Nbr MATERIELS" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="98.0" fitWidth="106.0" layoutX="166.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/materiel.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="nbrMateriel" layoutX="12.0" layoutY="56.0" prefHeight="109.0" prefWidth="133.0" style="-fx-font-size: 30px; -fx-alignment: center;" styleClass="widget" textFill="WHITE">
+                                       <font>
+                                          <Font name="Century Gothic" size="32.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="29.0" layoutY="328.0" prefHeight="409.0" prefWidth="530.0" style="-fx-background-color: gray;" styleClass="dashboard_panne_content">
+                           <children>
+                              <PieChart fx:id="statiqueDateCommande" layoutX="10.0" layoutY="12.0" prefHeight="391.0" prefWidth="503.0" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="574.0" layoutY="325.0" prefHeight="412.0" prefWidth="555.0" style="-fx-background-color: gray;" styleClass="dashboard_panne_content">
+                           <children>
+                              <BarChart fx:id="clientParGenre" focusTraversable="true" layoutX="10.0" layoutY="10.0" legendSide="TOP" prefHeight="398.0" prefWidth="527.0" title="Clients par genre">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </BarChart>
+                           </children>
+                        </Pane>
+                        <Label layoutX="321.0" layoutY="249.0" prefHeight="61.0" prefWidth="558.0" styleClass="nav_item" text="STATISTIQUES VISUELLES">
+                           <font>
+                              <Font size="47.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pageGestionnaire" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="7.0" layoutY="369.0" prefHeight="305.0" prefWidth="562.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="78.0" layoutY="2.0" prefHeight="50.0" prefWidth="366.0" text="Liste des commandes" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="table_liste_commande" layoutX="3.0" layoutY="61.0" onMouseClicked="#supprimerCommande" prefHeight="237.0" prefWidth="554.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIdcommande" prefWidth="51.0" text="Id" />
+                                    <TableColumn fx:id="colnumeroClient" prefWidth="179.0" text="Numéro du Client" />
+                                    <TableColumn fx:id="colmontant" prefWidth="147.0" text="Montant" />
+                                    <TableColumn fx:id="coldateCommande" prefWidth="176.0" text="Date commande" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="571.0" layoutY="371.0" prefHeight="303.0" prefWidth="584.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="58.0" layoutY="1.0" prefHeight="50.0" prefWidth="448.0" text="Liste des détails comandes" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="table_liste_detailCommande" layoutX="3.0" layoutY="61.0" onMouseClicked="#supprimerDetail" prefHeight="231.0" prefWidth="554.0">
+                                 <columns>
+                                    <TableColumn fx:id="colIddetailcommande" prefWidth="51.0" text="Id" />
+                                    <TableColumn fx:id="colquantitedetail" prefWidth="135.0" text="Quantité" />
+                                    <TableColumn fx:id="colprixdetail" prefWidth="107.0" text="Prix Unitaire" />
+                                    <TableColumn fx:id="coldatedetail" prefWidth="115.0" text="Date detail" />
+                                    <TableColumn fx:id="colIdmaterieldetail" prefWidth="145.0" text="Materiel" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="9.0" layoutY="10.0" prefHeight="351.0" prefWidth="656.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="30.0" layoutY="4.0" prefHeight="50.0" prefWidth="274.0" text="Liste des clients" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="table_liste_clients" layoutX="8.0" layoutY="61.0" onMouseClicked="#supprimerClient" prefHeight="283.0" prefWidth="642.0">
+                                 <columns>
+                                    <TableColumn fx:id="colidclient" prefWidth="51.0" text="Id" />
+                                    <TableColumn fx:id="colclientnom" prefWidth="179.0" text="Nom Complet" />
+                                    <TableColumn fx:id="colclientgenre" prefWidth="181.0" text="Genre" />
+                                    <TableColumn fx:id="colclienttelephone" prefWidth="63.0" text="Téléphone" />
+                                    <TableColumn fx:id="colclientadresse" prefWidth="166.0" text="Adresse" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="rechercherClient" layoutX="295.0" layoutY="4.0" onKeyTyped="#filtrerEtRechercherClient" prefHeight="51.0" prefWidth="355.0" promptText="Rechercher un client...">
+                                 <font>
+                                    <Font name="Century Gothic" size="24.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </Pane>
+                        <TextField fx:id="rechercherCommande" layoutX="15.0" layoutY="685.0" onKeyTyped="#filtrerEtRechercherCommande" prefHeight="51.0" prefWidth="407.0" promptText="Rechercher une commande...">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="rechercherDetail" layoutX="577.0" layoutY="685.0" onKeyTyped="#filtrerEtRechercherdetail" prefHeight="51.0" prefWidth="423.0" promptText="Rechercher detail commande...">
+                           <font>
+                              <Font name="Century Gothic" size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnModifMateriel11" layoutX="445.0" layoutY="688.0" mnemonicParsing="false" onAction="#updateMateriel" prefHeight="50.0" prefWidth="113.0" styleClass="button_style" text="UPDATE" />
+                        <Button fx:id="btnModifMateriel111" layoutX="1012.0" layoutY="686.0" mnemonicParsing="false" onAction="#updateMateriel" prefHeight="50.0" prefWidth="113.0" styleClass="button_style" text="UPDATE" />
+                        <Pane layoutX="671.0" layoutY="14.0" prefHeight="341.0" prefWidth="489.0" styleClass="rectangle_form">
+                           <children>
+                              <Label layoutX="130.0" layoutY="9.0" prefHeight="50.0" prefWidth="266.0" text="IMPRESSION" textFill="#245757">
+                                 <font>
+                                    <Font name="System Bold Italic" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="66.0" fitWidth="64.0" layoutX="49.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/im.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="btnModifMateriel1" layoutX="14.0" layoutY="116.0" mnemonicParsing="false" onAction="#printAllClients" prefHeight="60.0" prefWidth="199.0" styleClass="button_style" text="LISTE CLIENTS">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifMateriel12" layoutX="246.0" layoutY="116.0" mnemonicParsing="false" onAction="#printAllClients" prefHeight="60.0" prefWidth="213.0" styleClass="button_style" text="LISTE COMMANDES">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifMateriel121" layoutX="18.0" layoutY="220.0" mnemonicParsing="false" onAction="#printAllClients" prefHeight="60.0" prefWidth="197.0" styleClass="button_style" text="LISTE DETAIL COMMANDE">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnModifMateriel1211" layoutX="247.0" layoutY="220.0" mnemonicParsing="false" onAction="#printAllClients" prefHeight="60.0" prefWidth="213.0" styleClass="button_style" text="LISTE COMMANDE CLIENT">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

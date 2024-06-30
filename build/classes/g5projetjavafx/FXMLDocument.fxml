@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stack_login_register" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g5projetjavafx.FXMLDocumentController">
+   <children>
+      <AnchorPane fx:id="user_login_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="login_form" layoutX="409.0" prefHeight="628.0" prefWidth="407.0" style="-fx-background-color: #245757;">
+               <children>
+                  <Label layoutX="65.0" layoutY="81.0" text="CONNEXION" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="45.0" />
+                     </font>
+                  </Label>
+                  <TextField id="login_field" fx:id="login_form_login" focusTraversable="false" layoutX="38.0" layoutY="314.0" prefHeight="41.0" prefWidth="332.0" promptText="Votre login" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;">
+                     <font>
+                        <Font name="Century Gothic Bold" size="25.0" />
+                     </font>
+                  </TextField>
+                  <Button id="login_button" fx:id="login_form_button" layoutX="36.0" layoutY="495.0" mnemonicParsing="false" onAction="#connectionControl" prefHeight="59.0" prefWidth="332.0" style="-fx-font-size: 20px;" styleClass="login_form_button" text="S E  C O N N E C T E R" textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="login_form_forgot_password" layoutX="40.0" layoutY="434.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="318.0" style="-fx-font-weight: bold; -fx-background-color: none; -fx-font-size: 18px;" styleClass="password_forgot" text="Mot de passe oublié ?" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="19.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="117.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../projetJavaG5FX/src/images/login.png" />
+                     </image>
+                  </ImageView>
+                  <PasswordField fx:id="login_form_password" layoutX="36.0" layoutY="374.0" prefHeight="41.0" prefWidth="332.0" promptText="mot de passe" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;" />
+                  <Button fx:id="error_login" layoutX="33.0" layoutY="554.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="332.0" style="-fx-font-weight: bold; -fx-background-color: none; -fx-font-size: 18px;" textFill="#fc1b1b">
+                     <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="aside_login_form" prefHeight="628.0" prefWidth="407.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Label layoutX="34.0" layoutY="337.0" text="Vente matériels de Constructions" textFill="#2c2929">
+                     <font>
+                        <Font name="Century Gothic Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="244.0" fitWidth="393.0" layoutX="7.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/image.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="aside_login_form_button" layoutX="30.0" layoutY="562.0" mnemonicParsing="false" onAction="#swicthForm" prefHeight="41.0" prefWidth="347.0" style="-fx-font-size: 24px; -fx-background-radius: 5px;" styleClass="create_new_account" text="Créer un nouveau compte" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="window_register" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <AnchorPane fx:id="aside_login_form1" prefHeight="628.0" prefWidth="407.0" style="-fx-background-color: #245757;">
+               <children>
+                  <Label layoutX="43.0" layoutY="26.0" prefHeight="59.0" prefWidth="299.0" text="INSCRIPTION" textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Bold" size="45.0" />
+                     </font>
+                  </Label>
+                  <TextField id="login_field" fx:id="register_login" focusTraversable="false" layoutX="31.0" layoutY="206.0" prefHeight="41.0" prefWidth="332.0" promptText="Login" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;">
+                     <font>
+                        <Font name="Century Gothic Bold" size="25.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="login_field" fx:id="register_email" focusTraversable="false" layoutX="31.0" layoutY="264.0" prefHeight="41.0" prefWidth="332.0" promptText="Adresse mail" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;">
+                     <font>
+                        <Font name="Century Gothic Bold" size="25.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="register_role" editable="true" layoutX="31.0" layoutY="496.0" prefHeight="41.0" prefWidth="332.0" />
+                  <PasswordField fx:id="register_password" layoutX="31.0" layoutY="378.0" prefHeight="41.0" prefWidth="332.0" promptText="mot de passe" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;" />
+                  <PasswordField fx:id="register_confirmation" layoutX="31.0" layoutY="439.0" prefHeight="41.0" prefWidth="332.0" promptText="confirmation" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;" />
+                  <Button fx:id="register_button" layoutX="28.0" layoutY="558.0" mnemonicParsing="false" onAction="#EventExample" prefHeight="41.0" prefWidth="339.0" style="-fx-font-size: 20px; -fx-background-radius: 5px;" styleClass="register_button" text="I n s c r i p t i o n" textFill="WHITE" />
+                  <Label fx:id="label_error" layoutX="27.0" layoutY="131.0" prefHeight="32.0" prefWidth="332.0" style="-fx-text-alignment: center; -fx-wrap-text: true;" textFill="#ff153c" wrapText="true">
+                     <font>
+                        <Font name="Century Gothic Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField id="login_field" fx:id="register_question" focusTraversable="false" layoutX="31.0" layoutY="321.0" prefHeight="41.0" prefWidth="332.0" promptText="Une que vs n'oublierais pas" style="-fx-background-color: #fff; -fx-background-radius: 5px; -fx-font-size: 24px;">
+                     <font>
+                        <Font name="Century Gothic Bold" size="25.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="register_form" layoutX="406.0" layoutY="2.0" prefHeight="628.0" prefWidth="407.0" style="-fx-background-color: ffff;">
+               <children>
+                  <Label layoutX="37.0" layoutY="316.0" text="Vente matériels de Constructions" textFill="#2c2929">
+                     <font>
+                        <Font name="Century Gothic Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="244.0" fitWidth="393.0" layoutX="10.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/image.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="aside_login_form_button11" layoutX="32.0" layoutY="536.0" mnemonicParsing="false" onAction="#swicthForm" prefHeight="41.0" prefWidth="347.0" style="-fx-font-size: 24px; -fx-background-radius: 5px;" styleClass="have_account" text="J'ai un compte" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
